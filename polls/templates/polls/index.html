@@ -52,32 +52,29 @@
   This Website is designed by -- <strong>  SOHAM RAY</strong> , student of B.Tech in Computer Science Engineering, GCETTS
 </div>
    <div class = "container">
-<!--   <div class="container-fluid text-center">-->
-       {% if latest_question_list %}
-<!--     <div class="row">-->
-<!--            {% for i, question in enumerate(latest_question_list) %}-->
-            {% i=0 %}
-<!--       {% for i in range(len(latest_question_list)) %}-->
-         {% for question in latest_question_list %}
-<!--       <div class="col-4">-->
-         <div class = "card-deck">
-                <div class="card" >
-                    <div class="card-body">
-                         <h5 class="card-title">{{ question.question_text }}</h5>
-                        <p class="card-text">Leave your Valuable Opinion</p>
-                         <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary">Vote here</a>
-                    </div>
-<!--         </div>-->
+    <!--   <div class="container-fluid text-center">-->
+           {% if latest_question_list %}
+    <!--     <div class="row">-->
+             {% for question in latest_question_list %}
+    <!--       <div class="col-4">-->
+                <div class="col-4" style = "margin-bottom:15px;">
+                    <div class="card">
+                        <div class="card-body">
+                              <h5 class="card-title">{{ question.question_text }}</h5>
+                              <p class="card-text">Leave your Valuable Opinion</p>
+                              <a href="{% url 'polls:detail' question.id %}" class="btn btn-primary">Vote here</a>
+                        </div>
+                     </div>
                 </div>
-                {% i
-                {% endfor %}
-         </div>
-<!--       </div>-->
-         {% else %}
-         <p>No polls are available.</p>
-        {% endif %}
-<!--     </div>-->
-   </div>
+                    {% endfor %}
+                 </div>
+
+    <!--       </div>-->
+             {% else %}
+                <p>No polls are available.</p>
+            {% endif %}
+    <!--     </div>-->
+       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
